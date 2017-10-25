@@ -1,4 +1,6 @@
-express-pug-static [![Build Status](https://api.travis-ci.org/Adslot/express-pug-static.png)](https://travis-ci.org/Adslot/express-pug-static)
+express-pug-static
+[![Build Status](https://api.travis-ci.org/Adslot/express-pug-static.png)](https://travis-ci.org/Adslot/express-pug-static)
+[![codecov](https://codecov.io/gh/Adslot/express-pug-static/branch/master/graph/badge.svg)](https://codecov.io/gh/Adslot/express-pug-static)
 =============================================================================================================================================
 
 Connect (ExpressJS) middleware for serving pug files as static html
