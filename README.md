@@ -1,11 +1,11 @@
-connect-jade-static [![Build Status](https://api.travis-ci.org/runk/connect-jade-static.png)](https://travis-ci.org/runk/connect-jade-static)
-===================
+express-pug-static [![Build Status](https://api.travis-ci.org/Adslot/express-pug-static.png)](https://travis-ci.org/Adslot/express-pug-static)
+=============================================================================================================================================
 
-Connect (ExpressJS) middleware for serving jade files as static html
+Connect (ExpressJS) middleware for serving pug files as static html
 
 ## Installation
 
-    npm install connect-jade-static
+    npm install express-pug-static
 
 
 ## Usage
@@ -14,39 +14,39 @@ Assume the following structure of your project:
 
     /views
       /partials
-        /file.jade
+        /file.pug
 
-Let's make jade files from `/views/partials` web accessable:
+Let's make pug files from `/views/partials` web accessible:
 
 #### Express prior to 4.0
 
-    var jadeStatic = require('connect-jade-static');
+    var pugStatic = require('express-pug-static');
 
     app = express();
     app.configure(function() {
-      app.use(jadeStatic({
+      app.use(pugStatic({
         baseDir: path.join(__dirname, '/views/partials'),
         baseUrl: '/partials',
         maxAge: 86400,
-        jade: { pretty: true }
+        pug: { pretty: true }
       }));
     });
 
 #### Express 4.0
 
 
-    var jadeStatic = require('connect-jade-static');
+    var pugStatic = require('express-pug-static');
 
     app = express();
-    app.use(jadeStatic({
+    app.use(pugStatic({
       baseDir: path.join(__dirname, '/views/partials'),
       baseUrl: '/partials',
       maxAge: 86400,
-      jade: { pretty: true }
+      pug: { pretty: true }
     }));
 
 Now, if you start your web server and request `/partials/file.html` in browser you
-should be able see the compiled jade template.
+should be able see the compiled pug template.
 
 -------------
 
