@@ -1,18 +1,18 @@
 {
-  "name": "connect-jade-static",
-  "version": "0.2.2",
-  "description": "Connect (expressjs) middleware for serving html files from jade template",
+  "name": "express-pug-static",
+  "version": "0.1.0",
+  "description": "Connect (expressjs) middleware for serving html files from pug template",
   "main": "index.js",
   "scripts": {
     "test": "mocha -R spec --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/runk/connect-jade-static.git"
+    "url": "git://github.com/Adslot/express-pug-static.git"
   },
   "keywords": [
     "connect",
-    "jade",
+    "pug",
     "html",
     "static",
     "middleware",
@@ -21,14 +21,14 @@
     "compile"
   ],
   "dependencies": {
-    "jade": "*"
+    "pug": "*"
   },
   "devDependencies": {
     "mocha": ">=1.12.0"
   },
-  "author": "Dmitry Shirokov <deadrunk@gmail.com>",
+  "author": "Adslot",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/runk/connect-jade-static/issues"
+    "url": "https://github.com/Adslot/express-pug-static/issues"
   }
 }
