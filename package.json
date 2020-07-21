@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "codecov": "cat coverage/coverage-final.json | codecov",
-    "test": "nyc --reporter=json --reporter=text mocha -R spec --recursive"
+    "test": "nyc --reporter=json --reporter=text mocha -R spec --recursive",
+    "postversion": "git push -u origin $(git rev-parse --abbrev-ref HEAD) --follow-tags && npm publish && echo '…released.'",
+    "preversion": "echo 'Releasing…' && npm ci",
+    "release:major": "npm version major -m 'build: release major version %s'",
+    "release:minor": "npm version minor -m 'build: release minor version %s'",
+    "release:patch": "npm version patch -m 'build: release patch version %s'"
   },
   "repository": {
     "type": "git",
