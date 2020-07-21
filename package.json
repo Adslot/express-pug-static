@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "codecov.io": "^0.1.6",
-    "mocha": ">=1.12.0",
-    "nyc": "^11.2.1"
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0"
   },
   "author": "Adslot",
   "license": "MIT",
