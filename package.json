@@ -27,7 +27,7 @@
     "compile"
   ],
   "dependencies": {
-    "pug": "*"
+    "pug": "^2.0.4"
   },
   "devDependencies": {
     "codecov.io": "^0.1.6",
