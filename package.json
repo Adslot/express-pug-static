@@ -4,7 +4,6 @@
   "description": "Connect (expressjs) middleware for serving html files from pug template",
   "main": "index.js",
   "scripts": {
-    "codecov": "cat coverage/coverage-final.json | codecov",
     "test": "nyc --reporter=json --reporter=text mocha -R spec --recursive",
     "postversion": "git push -u origin $(git rev-parse --abbrev-ref HEAD) --follow-tags && npm publish && echo '…released.'",
     "preversion": "echo 'Releasing…' && npm ci",
@@ -30,7 +29,6 @@
     "pug": "^2.0.4"
   },
   "devDependencies": {
-    "codecov.io": "^0.1.6",
     "mocha": "^8.0.1",
     "nyc": "^15.1.0"
   },
