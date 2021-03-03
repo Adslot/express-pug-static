@@ -26,10 +26,10 @@
     "compile"
   ],
   "dependencies": {
-    "pug": "^2.0.4"
+    "pug": "^3.0.2"
   },
   "devDependencies": {
-    "mocha": "^8.0.1",
+    "mocha": "^8.3.0",
     "nyc": "^15.1.0"
   },
   "author": "Adslot",
