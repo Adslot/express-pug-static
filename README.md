@@ -2,7 +2,7 @@ express-pug-static
 =============================================================================================================================================
 
 [![npm version](https://badge.fury.io/js/express-pug-static.svg)](https://badge.fury.io/js/express-pug-static)
-![Build Status](https://github.com/Adslot/express-pug-static/workflows/Node.js%20CI/badge.svg)
+![Build Status](https://github.com/Adslot/express-pug-static/actions/workflows/node.js.yml/badge.svg)
 [![codecov](https://codecov.io/gh/Adslot/express-pug-static/branch/master/graph/badge.svg)](https://codecov.io/gh/Adslot/express-pug-static)
 
 Connect (ExpressJS) middleware for serving pug files as static html
