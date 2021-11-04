@@ -36,5 +36,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Adslot/express-pug-static/issues"
+  },
+  "engines": {
+    "node": "^16"
   }
 }
