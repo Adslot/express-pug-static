@@ -38,6 +38,6 @@
     "url": "https://github.com/Adslot/express-pug-static/issues"
   },
   "engines": {
-    "node": "^16"
+    "node": "^18"
   }
 }
