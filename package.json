@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "mocha": "^10.5.2",
-    "nyc": "^15.1.0"
+    "nyc": "^17.0.0"
   },
   "author": "Adslot",
   "license": "MIT",
