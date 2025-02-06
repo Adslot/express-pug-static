@@ -1,5 +1,5 @@
 const path = require('path');
-const fs = require('fs'); // eslint-disable-line id-length
+const fs = require('fs');
 const pug = require('pug');
 const url = require('url');
 const assert = require('assert');
@@ -16,7 +16,6 @@ const defaultOptions = {
   // Header for Cache-Control: max-age=0
   maxAge: 0,
 };
-
 
 module.exports = (opts) => {
   if (!opts.baseDir) {
@@ -50,8 +49,8 @@ module.exports = (opts) => {
       }
 
       if (!stats.isFile()) {
-      return next();
-    }
+        return next();
+      }
 
       pug.renderFile(filePath, newOpts.pug, (renderErr, html) => {
         if (renderErr) {
@@ -70,7 +69,6 @@ module.exports = (opts) => {
   };
 };
 
-
 module.exports.getDefaultOptions = (opts = {}) => {
   opts = opts || {};
   Object.keys(defaultOptions).forEach((optionName) => {
@@ -80,7 +78,6 @@ module.exports.getDefaultOptions = (opts = {}) => {
   });
   return opts;
 };
-
 
 module.exports.getTplPath = (requestUrl, opts) => {
   const newOpts = module.exports.getDefaultOptions(opts);

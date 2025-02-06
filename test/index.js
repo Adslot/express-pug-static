@@ -2,12 +2,11 @@ const assert = require('assert');
 const path = require('path');
 const connectPugStatic = require('../index');
 
-
 describe('connectPugStatic', () => {
   let middleware = null;
   const baseDir = path.join(__dirname, 'views');
   const next = () => {
-    throw new Error('next() shouldn\'t be called');
+    throw new Error("next() shouldn't be called");
   };
 
   beforeEach(() => {
@@ -16,9 +15,15 @@ describe('connectPugStatic', () => {
 
   describe('middleware()', () => {
     it('should raise error when insufficient params provided', () => {
-      assert.throws(() => { connectPugStatic({ baseUrl: '/' }); });
-      assert.throws(() => { connectPugStatic({ baseDir: '/' }); });
-      assert.throws(() => { connectPugStatic(null); });
+      assert.throws(() => {
+        connectPugStatic({ baseUrl: '/' });
+      });
+      assert.throws(() => {
+        connectPugStatic({ baseDir: '/' });
+      });
+      assert.throws(() => {
+        connectPugStatic(null);
+      });
     });
 
     it('should serve pug file', (done) => {
@@ -75,13 +80,7 @@ describe('connectPugStatic', () => {
         end: (html) => {
           // otherwise pug tries to catch this error :/
           process.nextTick(() => {
-            assert.equal(html,
-              '\n<h1>Hello</h1>\n' +
-              '<ul>\n' +
-              '  <li>aaa</li>\n' +
-              '  <li>bbb</li>\n' +
-              '  <li>ccc</li>\n' +
-              '</ul>');
+            assert.equal(html, '\n<h1>Hello</h1>\n<ul>\n  <li>aaa</li>\n  <li>bbb</li>\n  <li>ccc</li>\n</ul>');
             assert.equal(headers['Content-Length'], 71);
             assert.equal(headers['Content-Type'], 'text/html; charset=utf-8');
             done();
@@ -98,8 +97,12 @@ describe('connectPugStatic', () => {
     it('should call next for unknown file', (done) => {
       const req = { originalUrl: '/views/blah.html' };
       const res = {
-        end: () => { throw new Error('Code shouldn\'t reach here'); },
-        send: () => { throw new Error('Code shouldn\'t reach here'); },
+        end: () => {
+          throw new Error("Code shouldn't reach here");
+        },
+        send: () => {
+          throw new Error("Code shouldn't reach here");
+        },
       };
 
       middleware(req, res, done);
@@ -108,8 +111,12 @@ describe('connectPugStatic', () => {
     it('should ignore requests without an appropriate .pug file', (done) => {
       const req = { originalUrl: '/views/no_tpl.css' };
       const res = {
-        end: () => { throw new Error('Code shouldn\'t reach here'); },
-        send: () => { throw new Error('Code shouldn\'t reach here'); },
+        end: () => {
+          throw new Error("Code shouldn't reach here");
+        },
+        send: () => {
+          throw new Error("Code shouldn't reach here");
+        },
       };
 
       middleware(req, res, done);
@@ -119,7 +126,7 @@ describe('connectPugStatic', () => {
       const req = { originalUrl: '/views/tpl_err.html' };
       const res = {
         end: () => {
-          throw new Error('Code shouldn\'t reach here');
+          throw new Error("Code shouldn't reach here");
         },
       };
 
@@ -135,7 +142,7 @@ describe('connectPugStatic', () => {
         baseDir: path.join(__dirname, 'views'),
         maxAge: 5432,
       });
-      const exp = new Date((+new Date()) + 5432).toGMTString();
+      const exp = new Date(+new Date() + 5432).toGMTString();
       const headers = {};
       const req = { originalUrl: '/views/tpl.html' };
       const res = {
@@ -155,7 +162,6 @@ describe('connectPugStatic', () => {
       middleware(req, res, next);
     });
   });
-
 
   describe('getTplPath()', () => {
     const opts = {
@@ -205,8 +211,10 @@ describe('connectPugStatic', () => {
     });
 
     it('should return index.pug for root', () => {
-      assert.equal(connectPugStatic.getTplPath('/', { baseUrl: '/', baseDir: `${baseDir}/foo` }),
-        `${baseDir}/foo/index.pug`);
+      assert.equal(
+        connectPugStatic.getTplPath('/', { baseUrl: '/', baseDir: `${baseDir}/foo` }),
+        `${baseDir}/foo/index.pug`
+      );
     });
 
     it('should return index.pug for a directory whithout trailing slash', () => {
@@ -214,11 +222,14 @@ describe('connectPugStatic', () => {
     });
 
     it('should not return index.pug for a directory if disabled', () => {
-      assert.equal(connectPugStatic.getTplPath('/testing/foo/', {
-        baseUrl: '/testing',
-        baseDir,
-        serveIndex: false,
-      }), null);
+      assert.equal(
+        connectPugStatic.getTplPath('/testing/foo/', {
+          baseUrl: '/testing',
+          baseDir,
+          serveIndex: false,
+        }),
+        null
+      );
     });
   });
 });
