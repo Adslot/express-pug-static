@@ -20,6 +20,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm ci --update-notifier=false
+      - run: npm run lint
       - run: npm test
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
