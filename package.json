@@ -30,7 +30,7 @@
     "compile"
   ],
   "dependencies": {
-    "pug": "^3.0.3"
+    "pug": "^3.0.4"
   },
   "devDependencies": {
     "eslint": "^9.39.1",
