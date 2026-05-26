@@ -8,7 +8,7 @@
     "lint:eslint": "eslint '**/*.js'",
     "lint:prettier": "prettier '**/*.js' --check",
     "lint": "npm run lint:eslint && npm run lint:prettier",
-    "test": "nyc --reporter=json --reporter=text mocha -R spec --recursive",
+    "test": "c8 --reporter=json --reporter=text mocha -R spec --recursive",
     "postversion": "git push -u origin $(git rev-parse --abbrev-ref HEAD) --follow-tags && npm publish && echo '…released.'",
     "preversion": "echo 'Releasing…' && npm ci",
     "release:major": "npm version major -m 'build: release major version %s'",
@@ -33,10 +33,10 @@
     "pug": "^3.0.4"
   },
   "devDependencies": {
+    "c8": "^11.0.0",
     "eslint": "^9.39.4",
     "eslint-config-adslot": "^2.2.1",
     "mocha": "^11.7.5",
-    "nyc": "^18.0.0",
     "prettier": "^3.8.1"
   },
   "author": "Adslot",
